@@ -10,3 +10,4 @@ git+https://github.com/huggingface/peft@4a1559582281fc3c9283892caea8ccef1d6f5a4f
 ninja 
 packaging
 datasets
+jinja2

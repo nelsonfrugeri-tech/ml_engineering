@@ -4,13 +4,13 @@ from datasets import load_dataset
 
 def create_conversation(sample):
     # Convert dataset to OAI messages
-    system_message = """You are an text to SQL query translator. Users will ask you questions in English and you will generate a SQL query based on the provided SCHEMA.
+    assistant_message = """You are an text to SQL query translator. Users will ask you questions in English and you will generate a SQL query based on the provided SCHEMA.
     SCHEMA:
     {schema}"""
 
     return {
         "messages": [
-        {"role": "system", "content": system_message.format(schema=sample["context"])},
+        {"role": "assistant", "content": assistant_message.format(schema=sample["context"])},
         {"role": "user", "content": sample["question"]},
         {"role": "assistant", "content": sample["answer"]}
         ]
